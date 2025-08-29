@@ -1,6 +1,6 @@
 # abacusgecwc/website
 
-Welcome to the official repository for the [Abacus GECWC Website](https://github.com/abacusgecwc/website). This project is dedicated to the web presence of Abacus GECWC, providing information, resources, and updates for our community.
+Welcome to the official repository for the [ABACUS GECWC Website](https://github.com/abacusgecwc/website). This project is dedicated to the web presence of Abacus GECWC, providing information, resources, and updates for our community.
 
 ## Project Description
 
