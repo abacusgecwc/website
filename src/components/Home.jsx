@@ -3,7 +3,7 @@ import Layout from "./Layout"
 // import { FaBullhorn } from "react-icons/fa";
 import EventsGallery from "./EventsGallery";
 import TeamSection from "./meetTheTeam";
-import Feedback from "./feedback";
+import Feedback from "./Feedback";
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 
@@ -186,5 +186,6 @@ const Home = () => {
         </Layout>
     )
 }
+
 
 export default Home
