@@ -163,48 +163,76 @@ const Layout = ({children}) => {
             </aside>
             { children }
 
-            <footer className="px-16 py-12 bg-[#000000]   mx-auto z-40 relative ">
-                <div className="w-7/12 mx-auto grid md:grid-cols-3 gap-4">
-                    <div className="w-32 h-32 ">
-                        <img src="/images/collegelogo.png" className=" w-[112px]"/>
-                    </div>
-                    <div className="w-32 h-32 flex">
-                        <img src="/images/logo.png"  className="my-auto"/>
-                    </div>
-                    <div className="flex flex-col gap-4 w-full">
-                        {/* Social Icons */}
-                        <div className="flex gap-4">
-                            <Link
-                            to="/instagram"
-                            className="w-12 h-12 rounded-full flex items-center justify-center bg-gradient-to-br from-yellow-400 via-pink-500 to-purple-600 shadow-lg"
-                            >
-                            <FaInstagram size={20} className="text-white" />
-                            </Link>
+            <footer className="px-6 md:px-16 py-12 bg-[#000000] text-gray-300 mx-auto z-40 relative">
+                <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
 
-                            <Link
-                            to="/linkedin"
-                            className="w-12 h-12 rounded-full flex items-center justify-center bg-blue-600 shadow-lg"
-                            >
-                            <FaLinkedinIn size={20} className="text-white" />
-                            </Link>
-                        </div>
+                    {/* College + Club Logos */}
+                    <div className="flex items-center justify-center md:items-start gap-4">
+                    <img src="/images/collegelogo.png" alt="College Logo" className="w-28 md:w-32" />
+                    <img src="/images/logo.png" alt="Club Logo" className="w-28 md:w-32" />
+                    </div>
 
-                        {/* Contact Button */}
-                        <button
-                            className="px-6 py-2 w-fit rounded-full bg-gradient-to-r from-blue-500 to-blue-400 text-white font-semibold text-base shadow-md hover:scale-105 transition-transform duration-300"
-                            type="button"
-                            onClick={() => {
-                            const modal = document.getElementById("ContactModal");
-                            if (modal) modal.style.display = "block";
-                            }}
+                    {/* Quick Links */}
+                    <div className="flex flex-col items-center md:items-start gap-3">
+                    <h3 className="text-lg font-semibold text-white">Quick Links</h3>
+                    <ul className="flex flex-col gap-2 text-sm font-medium">
+                        {nav.map((item, index) => (
+                        <li key={index}>
+                            <Link
+                            to={item.to}
+                            className="hover:text-cyan-400 transition-colors duration-200"
+                            >
+                            {item.label}
+                            </Link>
+                        </li>
+                        ))}
+                    </ul>
+                    </div>
+
+                    {/* Contact & Socials */}
+                    <div className="flex flex-col items-center md:items-start gap-4">
+                    <h3 className="text-lg font-semibold text-white">Connect With Us</h3>
+
+                    {/* Social Icons */}
+                    <div className="flex gap-4">
+                        <a
+                        href="https://instagram.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-10 h-10 rounded-full flex items-center justify-center bg-gradient-to-br from-yellow-400 via-pink-500 to-purple-600 shadow-lg hover:scale-110 transition-transform"
                         >
-                            Contact Us
-                        </button>
+                        <FaInstagram size={18} className="text-white" />
+                        </a>
+                        <a
+                        href="https://linkedin.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-10 h-10 rounded-full flex items-center justify-center bg-blue-600 shadow-lg hover:scale-110 transition-transform"
+                        >
+                        <FaLinkedinIn size={18} className="text-white" />
+                        </a>
                     </div>
 
+                    {/* Contact Button */}
+                    <button
+                        className="px-6 py-2 rounded-full bg-gradient-to-r from-blue-500 to-blue-400 text-white font-semibold text-sm shadow-md hover:scale-105 transition-transform duration-300"
+                        type="button"
+                        onClick={() => {
+                        const modal = document.getElementById("ContactModal");
+                        if (modal) modal.style.display = "block";
+                        }}
+                    >
+                        Contact Us
+                    </button>
+                    </div>
                 </div>
-                
-            </footer>
+
+                {/* Bottom note */}
+                <div className="mt-10 text-center text-sm text-gray-500 border-t border-gray-700 pt-6">
+                    © {new Date().getFullYear()} ABACUS Club · All Rights Reserved
+                </div>
+                </footer>
+
         </div>
     )
 }

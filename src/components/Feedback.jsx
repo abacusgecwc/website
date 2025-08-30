@@ -30,8 +30,8 @@ const Feedback = () => {
           const value = input.value
 
           const key = input.name
-          setForm({
-            ...form,
+          setFormData({
+            ...formData,
             [key] : value,
           })
     }
@@ -76,9 +76,8 @@ const Feedback = () => {
       {/* Added padding to the grid container to accommodate the overflowing image */}
 
       
-      <div > {/* This padding matches the image width */}
-        <div className="bg-white rounded-2xl shadow-xl md:w-[400px] md:h-[300px] h-[400px] relative p-5 flex mx-auto ">
-          {/* Slides */}
+      <div >
+        <div className="bg-white rounded-2xl shadow-xl md:w-[400px] md:h-[300px] h-[400px] relative p-5 flex mx-auto">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
@@ -93,7 +92,7 @@ const Feedback = () => {
                   className="w-[120px] h-[120px] rounded-2xl object-cover "
                 />
               </div>
-              <div className="flex-1">
+              <div className="flex-1 overflow-hidden">
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">{testimonial.name}</h3>
                 <h4 className="text-base text-gray-500 mb-1">{testimonial.role}</h4>
                 <p className="text-base text-gray-600 leading-relaxed">"{testimonial.quote}"</p>
